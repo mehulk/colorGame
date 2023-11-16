@@ -13,7 +13,7 @@ pipeline {
             steps {
                 // For a simple HTML site, no build step is needed
                 // You might want to copy the files to a specific directory if needed
-                sh 'cp -r * /var/www/html/'
+                sh 'mkdir -p /var/www/html/'
             }
         }
 
