@@ -23,7 +23,9 @@ pipeline {
             steps {
                 // Deploy the HTML site to a web server or hosting service
                 // For example, copying the files to a web server directory
-                sh 'cp -r * /var/www/html/'
+                //sh 'cp -r * /var/www/html/'
+                sh 'mkdir -p $WORKSPACE/html/'
+                sh 'cp -r * $WORKSPACE/html/'
             }
         }
     }
