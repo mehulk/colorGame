@@ -13,9 +13,9 @@ pipeline {
             steps {
                 // For a simple HTML site, no build step is needed
                 // You might want to copy the files to a specific directory if needed
-                //sh 'apt -y install apache2'
-                sh 'wget https://archive.apache.org/dist/httpd/httpd-2.4.51.tar.gz'
-                sh 'tar -zxvf httpd-2.4.51.tar.gz'
+                sh 'sudo apt -y install apache2'
+                //sh 'wget https://archive.apache.org/dist/httpd/httpd-2.4.51.tar.gz'
+                //sh 'tar -zxvf httpd-2.4.51.tar.gz'
             }
         }
 
@@ -23,9 +23,9 @@ pipeline {
             steps {
                 // Deploy the HTML site to a web server or hosting service
                 // For example, copying the files to a web server directory
-                //sh 'cp -r * /var/www/html/'
-                sh 'mkdir -p $WORKSPACE/html/'
-                sh 'cp -r * $WORKSPACE/html/'
+                sh 'cp -r * /var/www/html/'
+                //sh 'mkdir -p $WORKSPACE/html/'
+                //sh 'cp -r * $WORKSPACE/html/'
             }
         }
     }
