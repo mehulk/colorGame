@@ -13,9 +13,9 @@ pipeline {
             steps {
                 // For a simple HTML site, no build step is needed
                 // You might want to copy the files to a specific directory if needed
-                sh 'sudo apt -y install apache2'
-                //sh 'wget https://archive.apache.org/dist/httpd/httpd-2.4.51.tar.gz'
-                //sh 'tar -zxvf httpd-2.4.51.tar.gz'
+                //sh 'sudo apt -y install apache2'
+                sh 'wget https://archive.apache.org/dist/httpd/httpd-2.4.51.tar.gz'
+                sh 'tar -zxvf httpd-2.4.51.tar.gz'
             }
         }
 
