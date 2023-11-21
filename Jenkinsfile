@@ -26,7 +26,7 @@ pipeline {
 
                 withCredentials([file(credentialsId: 'gcloud-creds', variable: 'GCLOUD_CREDS')]){
 
-                    sh "gcloud compute ssh jenkins@jenkins-server --zone=us-central1-a --project cloud-labs-405222 --command 'sudo apt install apache2 -y'"
+                    sh "gcloud compute ssh mehulkanotra98@jenkins-server --zone=us-central1-a --project cloud-labs-405222 --command 'sudo apt install apache2 -y'"
 
 
                 }
