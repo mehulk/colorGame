@@ -24,8 +24,12 @@ pipeline {
                 //sh 'wget https://archive.apache.org/dist/httpd/httpd-2.4.51.tar.gz'
                 //sh 'tar -zxvf httpd-2.4.51.tar.gz'
 
-                withCredentials([file(ID: '6f113e45-123a-4313-bb4e-8a71ff698346')]){}
-                sh "gcloud compute ssh jenkins@jenkins-server --zone=us-central1-a --project cloud-labs-405222 --command 'sudo apt install apache2 -y'"
+                withCredentials([file(credentialsId: '6f113e45-123a-4313-bb4e-8a71ff698346', variable: 'GCLOUD_CREDS')]){
+
+                    sh "gcloud compute ssh jenkins@jenkins-server --zone=us-central1-a --project cloud-labs-405222 --command 'sudo apt install apache2 -y'"
+
+
+                }
 
             }
         }
