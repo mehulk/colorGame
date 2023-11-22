@@ -23,7 +23,7 @@ pipeline {
                     } catch (Exception e) {
                         currentBuild.result = 'FAILURE'
                         sh """
-                        gcloud logging write Jenkings_Log '{"Stage": "stage1", "Message":"Build execution Failed"}' --payload-type=json --severity=CRITICAL
+                        gcloud logging write Jenkins_Log '{"Stage": "stage1", "Message":"Build execution Failed"}' --payload-type=json --severity=CRITICAL
                         """
                         error("Stage 2 failed: ${e.message}")
                         
@@ -43,7 +43,7 @@ pipeline {
                     } catch (Exception e) {
                         currentBuild.result = 'FAILURE'
                         sh """
-                        gcloud logging write Jenkings_Log '{"Stage": "stage2", "Message":"Deploy execution Failed"}' --payload-type=json --severity=CRITICAL
+                        gcloud logging write Jenkins_Log '{"Stage": "stage2", "Message":"Deploy execution Failed"}' --payload-type=json --severity=CRITICAL
                         """
                         error("Stage 2 failed: ${e.message}")
                         
