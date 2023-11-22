@@ -19,7 +19,7 @@ pipeline {
                             sh "gcloud compute ssh jenkins-gcloud@jenkins-server --zone=us-central1-a --project cloud-labs-405222 --command 'sudo apt install apache2 -y'"
                         }
 
-                        sh 'false'
+                        //sh 'false'
                     } catch (Exception e) {
                         currentBuild.result = 'FAILURE'
                         sh """
@@ -39,7 +39,7 @@ pipeline {
                     try {
                         // Deploy the HTML site to a web server or hosting service
                         sh "gcloud compute ssh jenkins@jenkins-server --zone=us-central1-a --project cloud-labs-405222 --command 'sudo cp -r * /var/www/html/'"
-                        sh 'false'
+                        //sh 'false'
                     } catch (Exception e) {
                         currentBuild.result = 'FAILURE'
                         sh """
